@@ -1,0 +1,28 @@
+{
+  "name": "learn-sinon",
+  "version": "1.0.0",
+  "description": "Mock and stub like a pro :cool:",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/finnhodgkin/learn-sinon.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/finnhodgkin/learn-sinon/issues"
+  },
+  "homepage": "https://github.com/finnhodgkin/learn-sinon#readme",
+  "devDependencies": {
+    "sinon": "^2.3.7",
+    "sinon-test": "^2.0.0"
+  },
+  "dependencies": {
+    "hapi": "^16.4.3",
+    "request": "^2.81.0"
+  }
+}
