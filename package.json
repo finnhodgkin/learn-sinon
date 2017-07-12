@@ -4,7 +4,7 @@
   "description": "Mock and stub like a pro :cool:",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node test.spec.js | tap-spec"
   },
   "repository": {
     "type": "git",
@@ -19,7 +19,9 @@
   "homepage": "https://github.com/finnhodgkin/learn-sinon#readme",
   "devDependencies": {
     "sinon": "^2.3.7",
-    "sinon-test": "^2.0.0"
+    "sinon-test": "^2.0.0",
+    "tap-spec": "^4.1.1",
+    "tape": "^4.7.0"
   },
   "dependencies": {
     "hapi": "^16.4.3",
