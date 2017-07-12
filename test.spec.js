@@ -32,17 +32,36 @@ test('tests getImage', t => {
     t.equal(res, "i am a url", "tests that when the callback to request gets the expected argument it works properly")
   });
 
-  stub.reset();
   stub.yields(null, null, undefined);
 
   giphy.getImage('cats', (err, res) => {
     t.ok(err, 'tests that undefined body responses are error handled');
-  })
+  });
 
-  stub.reset();
   stub.yields(null, null, JSON.stringify({data:[]}));
 
   giphy.getImage('cats', (err, res) => {
     t.ok(err, 'tests that bad body responses are are error handled');
-  })
+  });
+
+  // Resets the stubbed function to its initial state
+  stub.restore();
+});
+
+test('Tests that the actual API is accessible after a restore.', t => {
+  giphy.getImage('cat', (err, res) => {
+    t.ok(res, 'tests the actual API');
+    t.end()
+  });
+})
+
+test('tests getImage again after restore', t => {
+
+  const stub = sinon.stub(request, 'get');
+  stub.yields(null, null, JSON.stringify({data:[]}));
+
+  giphy.getImage('bad cats', (err, res) => {
+    t.ok(err, 'tests that bad body responses are are error handled');
+    t.end()
+  });
 });
